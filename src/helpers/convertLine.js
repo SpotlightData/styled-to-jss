@@ -21,7 +21,7 @@ const shouldKeepTemplate = findInString(/:(\s*)\$/);
 const extractFunction = ifElse(
   shouldKeepTemplate,
   replace(/\${(\s*\w*\()(.*)\)};/, '$1[$2])(theme),'),
-  replace(/:\s*(.*)\${(\s*\w*\()(.*)\)};/, ': $1\`${$2[$3])(theme)}\`,')
+  replace(/:\s*(.*)\${(\s*\w*\()(.*)\)};/, ': `$1${$2[$3])(theme)}`,')
 );
 
 const stringifyValue = ifElse(

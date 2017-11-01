@@ -1,12 +1,12 @@
 import extractor from '../extractor';
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs';
+// import path from 'path';
 
-// TODO remove after testing
-const file = fs.readFileSync(
-  path.join(__dirname, './mockFile.txt'),
-  { encoding: 'utf-8' }
-);
+// // TODO remove after testing
+// const file = fs.readFileSync(
+//   path.join(__dirname, './mockFile.txt'),
+//   { encoding: 'utf-8' }
+// );
 
 describe('extractor', () => {
   it('should not modify empty line', () => {
@@ -33,6 +33,5 @@ describe('extractor', () => {
     expect(extractor('      width:${props[\'test\']}};\n').length)
       .toBe(0);
   });
-
   // console.log(extractor(file));
 })

@@ -39,7 +39,7 @@ describe('convertLine', () => {
 
   it('should keep string template if there is text before it', () => {
     expect(convertLine('border-top: 1px dashed ${palette(\'grayscale\', 2)};'))
-      .toContain('1px dashed `${palette([\'grayscale\', 2])(theme)}`');
+      .toContain('`1px dashed ${palette([\'grayscale\', 2])(theme)}`');
   });
 
   it('should not wrap empty value in string', () => {
