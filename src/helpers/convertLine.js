@@ -16,10 +16,14 @@ const hasPropsFunction = anyPass([
 ]);
 const hasFunctionCall = findInString(/\${\s*\w*\(/);
 const hasQuotes = findInString(/:.*'.*'/);
+const shouldKeepTemplate = findInString(/:(\s*)\$/);
 
-const extractFunction = replace(
-  /\${(\s*\w*\()(.*)\)};/, '$1[$2])(theme),'
+const extractFunction = ifElse(
+  shouldKeepTemplate,
+  replace(/\${(\s*\w*\()(.*)\)};/, '$1[$2])(theme),'),
+  replace(/:\s*(.*)\${(\s*\w*\()(.*)\)};/, ': $1\`${$2[$3])(theme)}\`,')
 );
+
 const stringifyValue = ifElse(
   hasQuotes,
   replace(';',','),
@@ -28,6 +32,13 @@ const stringifyValue = ifElse(
 const handleTemplateFunction = ifElse(
   hasFunctionCall,
   extractFunction,
+  line => line,
+);
+
+const quoteLine = replace(/:(\s*)(.*);/, ': `$2`,');
+const handleTemplate = ifElse(
+  findInString(/\(\$\{\w*\}\)/),
+  quoteLine,
   line => line,
 );
 
@@ -44,6 +55,7 @@ export default function convertLine(line) {
   }
 
   let newLine = compose(
+    handleTemplate,
     handleTemplateFunction
   )(line);
  
