@@ -30,9 +30,9 @@ describe('extractor', () => {
   });
 
   it('should remove white space if line is cleared', () => {
-    expect(extractor('width:${props[\'test\']}};\n').length)
+    expect(extractor('      width:${props[\'test\']}};\n').length)
       .toBe(0);
   });
 
-  console.log(extractor(file));
+  // console.log(extractor(file));
 })

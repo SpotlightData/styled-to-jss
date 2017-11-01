@@ -15,7 +15,8 @@ const matchHandler = replace(/(\s*)(.*)/, (_, spaces, rest) => {
   } else {
     formattedString = convertLine(rest);
   }
-  return `${spaces}${formattedString}`;
+  return formattedString.length === 0 ?
+    '' : `${spaces}${formattedString}`;
 });
 
 function baseHandler(line) {
