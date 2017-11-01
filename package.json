@@ -1,0 +1,44 @@
+{
+  "name": "react-filter",
+  "version": "1.0.2",
+  "main": "./lib/index.js",
+  "repository": "SpotlightData/react-filter",
+  "license": "MIT",
+  "scripts": {
+    "build": "NODE_ENV=build babel src --out-dir lib --ignore '**/*.test.js'",
+    "test": "NODE_ENV=\"test\" jest --config jest.json",
+    "test:watch": "npm run test -- --watch",
+    "lint": "eslint src/** --config .eslintrc"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.10",
+    "ramda": "^0.25.0",
+    "react": "^15.6.1",
+    "react-jss": "^7.2.0",
+    "shortid": "^2.2.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^2.9.1",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-loader": "^1.8.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
+    "jest": "^20.0.4",
+    "jest-enzyme": "^3.8.3",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "15.6.1",
+    "react-test-renderer": "15.6.1",
+    "sinon": "^4.0.1"
+  }
+}
