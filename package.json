@@ -1,8 +1,11 @@
 {
   "name": "styled-to-jss",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "main": "./lib/index.js",
-  "repository": "SpotlightData/styled-to-jss",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpotlightData/styled-to-jss.git"
+  },
   "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=build babel src --out-dir lib --ignore '**/*.test.js'",
@@ -40,5 +43,14 @@
     "react-dom": "15.6.1",
     "react-test-renderer": "15.6.1",
     "sinon": "^4.0.1"
-  }
+  },
+  "description": "styled-components sheet convertion to jss one",
+  "bugs": {
+    "url": "https://github.com/SpotlightData/styled-to-jss/issues"
+  },
+  "homepage": "https://github.com/SpotlightData/styled-to-jss#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "author": ""
 }
