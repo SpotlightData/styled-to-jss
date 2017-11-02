@@ -1,6 +1,6 @@
 {
   "name": "styled-to-jss",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=build babel src --out-dir lib --ignore '**/*.test.js'",
+    "build": "NODE_ENV=build rm -rf './lib' && babel src --out-dir lib --ignore '**/*.test.js' --overwrite",
     "test": "NODE_ENV=\"test\" jest --config jest.json",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src/** --config .eslintrc"

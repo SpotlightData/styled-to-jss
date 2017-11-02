@@ -3,7 +3,7 @@ import convertClassName from '../convertClassName';
 describe('convertClassName', () => {
   it('should wrap name in quotes', () => {
     expect(convertClassName('.isoLoginContent {'))
-      .toContain('\'& .isoLoginContent\'')
+      .toContain('\'& .isoLoginContent\'');
   });
 
   it('should add a colon before curly brace', () => {
@@ -20,5 +20,4 @@ describe('convertClassName', () => {
     expect(convertClassName('@media only screen and (max-width: 767px) {'))
       .toBe('\'& @media only screen and (max-width: 767px)\': {');
   });
-
 });
