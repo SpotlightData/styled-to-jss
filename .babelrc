@@ -1,16 +1,10 @@
 {
-  "env": {
-    "test": {
-      "presets": [
-        "react",
-        "env"
-      ],
-      "plugins": ["transform-class-properties"]
-    },
-    "build": {
-      "plugins": ["transform-react-jsx", "transform-class-properties"],
-      "presets": ["env"],
-    }
-  }
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": "8.0"
+      }
+    }]
+  ],
 }
 
