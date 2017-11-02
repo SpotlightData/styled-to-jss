@@ -1,8 +1,8 @@
 {
-  "name": "react-filter",
+  "name": "styled-to-jss",
   "version": "1.0.2",
   "main": "./lib/index.js",
-  "repository": "SpotlightData/react-filter",
+  "repository": "SpotlightData/styled-to-jss",
   "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=build babel src --out-dir lib --ignore '**/*.test.js'",
