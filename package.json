@@ -1,7 +1,7 @@
 {
   "name": "styled-to-jss",
   "version": "2.3.0",
-  "main": "./lib/index.js",
+  "bin": "./lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SpotlightData/styled-to-jss.git"
